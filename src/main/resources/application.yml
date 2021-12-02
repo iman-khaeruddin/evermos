@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /onlinestore
+  swagger:
+      url_prefix: /
+
+datasource:
+  onlinestore:
+    url: jdbc:mysql://localhost:3306/evermos-onlinestore?zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Jakarta&allowPublicKeyRetrieval=true&useSSL=false
+    username: evermos
+    password: evermos
+    scanPackage: com.evermos.onlinestore.model.entity
+    driverClassName: com.mysql.cj.jdbc.Driver
+    maxPoolSize: 3
+    hibernate:
+      hbm2ddl.method: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
+      use_jdbc_metadata_defaults: false
+      enable_lazy_load_no_trans: true
+      charset: utf8mb4
+      charset_encoding: utf8mb4_bin
+      use_unicode: true
+      batch_size: 2
